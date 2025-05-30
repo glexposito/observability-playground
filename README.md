@@ -24,10 +24,12 @@ observability-playground/
 ├── otel-config/
 │   └── collector-config.yaml
 ├── prometheus-config/
-│   └── prometheus.yml
+│   └── prometheus.yaml
 ├── grafana-provisioning/
 │   ├── dashboards/
 │   └── datasources/
+├── tempo-config/
+│   ├── tempo.yaml
 └── README.md
 ```
 
@@ -60,18 +62,6 @@ docker compose up --build (not working yet)
 > 🧑 Default Grafana login: `admin` / `admin`
 
 ---
-
-```yaml
-apiVersion: 1
-
-providers:
-  - name: 'default'
-    folder: ''
-    type: file
-    disableDeletion: false
-    options:
-      path: /etc/grafana/provisioning/dashboards
-```
 
 > 📝 Add your `.json` dashboards inside `grafana-provisioning/dashboards/`
 

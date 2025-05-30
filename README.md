@@ -29,7 +29,7 @@ observability-playground/
 │   ├── dashboards/
 │   └── datasources/
 ├── tempo-config/
-│   ├── tempo.yaml
+│   └── tempo.yaml
 └── README.md
 ```
 

@@ -23,6 +23,3 @@ storage:
     backend: local
     local:
       path: /tmp/tempo/traces
-
-querier:
-  search_enabled: true

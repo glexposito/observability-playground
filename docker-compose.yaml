@@ -9,11 +9,12 @@ services:
     ports:
       - "4317:4317"   # OTLP gRPC
       - "4318:4318"   # OTLP HTTP
-      - "8888:8888"   # Collector metrics
+      - "8888:8888"
+      - "8880:8880"   
 
   prometheus:
     container_name: prometheus
-    image: prom/prometheus:latest
+    image: docker.io/prom/prometheus
     volumes:
       - ./prometheus-config/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
@@ -36,3 +37,17 @@ services:
       - ./tempo-config/tempo.yaml:/etc/tempo.yaml
     ports:
       - "3200:3200"  # Tempo HTTP API
+  
+  order-api:
+    container_name: order-api
+    build:
+      context: .
+      dockerfile: src/OrderInventory.OrderApi/Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_URLS=http://+:5001
+      - OTEL_SERVICE_NAME=order-api
+      - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://otel-collector:4317/v1/traces
+      - OTEL_EXPORTER_OTLP_METRICS_ENDPOINT=http://otel-collector:4317/v1/metrics
+      - OTEL_EXPORTER_OTLP_PROTOCOL=grpc

@@ -2,14 +2,16 @@ receivers:
   otlp:
     protocols:
       grpc:
+        endpoint: 0.0.0.0:4317
       http:
+        endpoint: 0.0.0.0:4318
 
 exporters:
   prometheus:
     endpoint: "0.0.0.0:8880"
   
   otlp/tempo:
-    endpoint: tempo:4317  # Tempo's gRPC OTLP receiver
+    endpoint: grafana-tempo:4317  # Tempo's gRPC OTLP receiver
     tls:
       insecure: true
 

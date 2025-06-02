@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderInventory.OrderApi", "src\OrderInventory.OrderApi\OrderInventory.OrderApi.csproj", "{271512E7-D174-424C-B160-ED9ADD8C8177}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderInventory.OrderApi.Tests", "OrderInventory.OrderApi.Tests\OrderInventory.OrderApi.Tests.csproj", "{05184467-C66F-485C-8A1A-F3664E0007D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderInventory.OrderApi.Tests", "tests\OrderInventory.OrderApi.Tests\OrderInventory.OrderApi.Tests.csproj", "{05184467-C66F-485C-8A1A-F3664E0007D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -35,7 +35,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\OrderInventory.OrderApi\OrderInventory.OrderApi.csproj" />
+      <ProjectReference Include="..\..\src\OrderInventory.OrderApi\OrderInventory.OrderApi.csproj" />
     </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ A sandbox to explore distributed tracing, metrics, and logging in a .NET Core mi
 
 This includes:
 - 🛒 Order API (.NET)
-- 📦 Inventory API (.NET)
+- 📦 Inventory API (.NET) (coming soon)
 - 📡 OpenTelemetry Collector
 - 🧵 Grafana Tempo (distributed tracing backend)
 - 📈 Prometheus
@@ -69,7 +69,7 @@ observability-playground/
      ```
      curl http://localhost:5001/orders/1
      ```
-   - Or interact with the API using Swagger UI at [http://localhost:5001/swagger](http://localhost:5001/swagger).
+   - Or interact with the API using Scalar UI at [http://localhost:5001/scalar](http://localhost:5001/scalar).
 
 5. **View Metrics**  
    - Go to your imported dashboard in Grafana to see live metrics for the Order API.

@@ -6,6 +6,7 @@ This includes:
 - 🛒 Order API (.NET)
 - 📦 Inventory API (.NET)
 - 📡 OpenTelemetry Collector
+- 🧵 Grafana Tempo (distributed tracing backend)
 - 📈 Prometheus
 - 📊 Grafana
 - 🐳 Docker Compose to wire it all together
@@ -20,7 +21,7 @@ observability-playground/
 ├── .env
 ├── src/
 │   ├── OrderApi/
-│   └── InventoryApi/
+│   └── InventoryApi/ (coming soon)
 ├── otel-config/
 │   └── collector-config.yaml
 ├── prometheus-config/
@@ -45,7 +46,7 @@ observability-playground/
 ### Run Everything
 
 ```bash
-docker compose up --build (not working yet)
+docker compose up --build
 ```
 
 ---
@@ -53,11 +54,11 @@ docker compose up --build (not working yet)
 ## 🌐 Service URLs
 
 | Service           | URL                                  |
-|------------------|---------------------------------------|
-| Order API        | http://localhost:5001/swagger         |
-| Inventory API    | http://localhost:5002/swagger         |
-| Grafana          | http://localhost:3000                 |
-| Prometheus       | http://localhost:9090                 |
+|-------------------|--------------------------------------|
+| Order API         | http://localhost:5001/swagger        |       |
+| Grafana           | http://localhost:3000                |
+| Prometheus        | http://localhost:9090                |
+| Grafana Tempo API | http://localhost:3200                |
 
 > 🧑 Default Grafana login: `admin` / `admin`
 
@@ -69,13 +70,7 @@ docker compose up --build (not working yet)
 
 ## 🧪 Observability Highlights
 
-- **Distributed Tracing**: Powered by OpenTelemetry
+- **Distributed Tracing**: Powered by OpenTelemetry and Grafana Tempo
 - **Metrics**: Prometheus scrapes the collector
 - **Dashboards**: Grafana shows metrics and custom visualizations
 - **Trace Context Propagation**: Traces flow between Order and Inventory APIs
-
----
-
-## 📜 License
-
-MIT

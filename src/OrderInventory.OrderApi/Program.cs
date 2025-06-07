@@ -10,18 +10,22 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+var resourceBuilder = ResourceBuilder.CreateDefault().AddService("order-api");
+
 builder.Services.AddOpenTelemetry()
-    .WithTracing(tracing => {
+    .WithTracing(tracing =>
+    {
         tracing
-            .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("order-api"))
+            .SetResourceBuilder(resourceBuilder)
             .AddAspNetCoreInstrumentation()
             .AddHttpClientInstrumentation()
             .AddConsoleExporter()
             .AddOtlpExporter();
     })
-    .WithMetrics(metrics => {
+    .WithMetrics(metrics =>
+    {
         metrics
-            .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("order-api"))
+            .SetResourceBuilder(resourceBuilder)
             .AddRuntimeInstrumentation()
             .AddHttpClientInstrumentation()
             .AddAspNetCoreInstrumentation()

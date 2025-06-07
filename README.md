@@ -83,7 +83,7 @@ observability-playground/
 
 | Service           | URL                                  |
 |-------------------|--------------------------------------|
-| Order API         | http://localhost:5001/swagger        |       |
+| Order API         | http://localhost:5001/scalar         |       
 | Grafana           | http://localhost:3000                |
 | Prometheus        | http://localhost:9090                |
 | Grafana Tempo API | http://localhost:3200                |

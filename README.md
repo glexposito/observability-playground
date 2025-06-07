@@ -67,7 +67,7 @@ observability-playground/
 4. **Generate Some Data**  
    - Use a tool like [curl](https://curl.se/) or your browser to call the Order API a few times:  
      ```
-     curl http://localhost:5001/swagger
+     curl http://localhost:5001/orders/1
      ```
    - Or interact with the API using Swagger UI at [http://localhost:5001/swagger](http://localhost:5001/swagger).
 
